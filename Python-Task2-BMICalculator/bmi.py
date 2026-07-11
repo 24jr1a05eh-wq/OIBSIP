@@ -98,6 +98,7 @@ def calculate_bmi():
     )
 
     save_record(username, weight, height, bmi, category)
+
     messagebox.showinfo("Saved", "BMI record saved successfully.")
 
 def show_history():
@@ -118,7 +119,9 @@ def show_history():
         WHERE username=?
         ORDER BY id
         """, (username,))
+
         records = cursor.fetchall()
+
         conn.close()
 
         history_window = tk.Toplevel(root)
